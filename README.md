@@ -22,7 +22,14 @@ FROM source_db.retail_sales
 LIMIT 5;
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+(1, 180, '2022-11-05', '10:47:00', 117, 'Male', 41, 'Clothing', 3, 300.0, 129.0, 900.0)
+(2, 522, '2022-07-09', '11:00:00', 52, 'Male', 46, 'Beauty', 3, 500.0, 145.0, 1500.0)
+(3, 559, '2022-12-12', '10:48:00', 5, 'Female', 40, 'Clothing', 4, 300.0, 84.0, 1200.0)
+(4, 1180, '2022-01-06', '08:53:00', 85, 'Male', 41, 'Clothing', 3, 300.0, 129.0, 900.0)
+(5, 1522, '2022-11-14', '08:35:00', 48, 'Male', 46, 'Beauty', 3, 500.0, 235.0, 1500.0)
+
 
 ### Query 2 Explanation
 
@@ -35,7 +42,10 @@ SELECT COUNT(*) AS total_rows,
 FROM source_db.retail_sales;
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+(2000, 155)
+
 
 ### Query 3 Explanation
 
@@ -47,7 +57,12 @@ SELECT DISTINCT category AS unique_categories
 FROM source_db.retail_sales;
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+('Clothing',)
+('Beauty',)
+('Electronics',)
+
 
 ### Query 4 Explanation
 
@@ -71,7 +86,7 @@ WHERE (
 );
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+_No output returned._
 
 ### Query 5 Explanation
 
@@ -86,7 +101,10 @@ ORDER BY total_sale DESC
 LIMIT 1;
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+(140, 1200.0)
+
 
 ### Query 6 Explanation
 
@@ -101,7 +119,7 @@ WHERE category = 'Clothing'
     AND strftime('%Y-%m', sale_date) = '2022-11';
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+_No output returned._
 
 ### Query 7 Explanation
 
@@ -114,7 +132,12 @@ FROM source_db.retail_sales
 GROUP BY category;
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+('Beauty', 286840.0)
+('Clothing', 311070.0)
+('Electronics', 313810.0)
+
 
 ### Query 8 Explanation
 
@@ -127,7 +150,10 @@ FROM source_db.retail_sales
 WHERE category = 'Beauty';
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+(40.34,)
+
 
 ### Query 9 Explanation
 
@@ -140,7 +166,14 @@ FROM source_db.retail_sales
 WHERE total_sale > 1000;
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+(522, '2022-07-09', '11:00:00', 52, 'Male', 46, 'Beauty', 3, 500.0, 145.0, 1500.0)
+(559, '2022-12-12', '10:48:00', 5, 'Female', 40, 'Clothing', 4, 300.0, 84.0, 1200.0)
+(1522, '2022-11-14', '08:35:00', 48, 'Male', 46, 'Beauty', 3, 500.0, 235.0, 1500.0)
+(1559, '2022-08-20', '07:40:00', 49, 'Female', 40, 'Clothing', 4, 300.0, 144.0, 1200.0)
+(421, '2022-04-08', '08:43:00', 66, 'Female', 37, 'Clothing', 3, 500.0, 235.0, 1500.0)
+
 
 ### Query 10 Explanation
 
@@ -153,7 +186,14 @@ FROM source_db.retail_sales
 GROUP BY gender, category;
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+('Female', 'Beauty', 332)
+('Female', 'Clothing', 348)
+('Female', 'Electronics', 340)
+('Male', 'Beauty', 282)
+('Male', 'Clothing', 354)
+
 
 ### Query 11 Explanation
 
@@ -171,7 +211,10 @@ ORDER BY average_sale DESC
 LIMIT 1;
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+('2023', '02', 535.531914893617)
+
 
 ### Query 12 Explanation
 
@@ -186,7 +229,14 @@ ORDER BY total_spent DESC
 LIMIT 5;
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+(3, 38440.0)
+(1, 30750.0)
+(5, 30405.0)
+(2, 25295.0)
+(4, 23580.0)
+
 
 ### Query 13 Explanation
 
@@ -209,7 +259,12 @@ FROM hourly_sales
 GROUP BY shift;
 ```
 
-⚠️ **Error executing query:** no such table: source_db.retail_sales
+**Sample Output:**
+
+('Afternoon', 164)
+('Evening', 1275)
+('Morning', 561)
+
 
 
 ## Reflection and Interpretation
