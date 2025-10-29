@@ -1,5 +1,7 @@
--- SQLite
+-- Prepare the environment by attaching the database
+ATTACH DATABASE '/Users/elianelapointe/sql/projects/retail_sales/retail_sales.db' AS source_db;
 
+-- Preview the first 5 rows of the retail_sales table
 SELECT rowid, *
 FROM source_db.retail_sales
 LIMIT 5;
