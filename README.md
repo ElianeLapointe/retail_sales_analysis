@@ -211,7 +211,7 @@ GROUP BY gender, category;
 SELECT
 strftime('%Y', sale_date) AS year,
 strftime('%m', sale_date) AS month,
-AVG(total_sale) AS average_sale
+ROUND(AVG(total_sale), 2) AS average_sale
 FROM source_db.retail_sales
 GROUP BY year, month
 ORDER BY average_sale DESC
@@ -220,14 +220,14 @@ LIMIT 1;
 
 | year | month | average_sale |
 |----|----|----|
-| 2023 | 02 | 535.531914893617 |
+| 2023 | 02 | 535.53 |
 
 **Explanation:**
 
 **Task**: Write a SQL query to find the top 5 customers based on the highest total sales:
 
 ```sql
-SELECT customer_id, SUM(total_sale) AS total_spent
+SELECT customer_id, ROUND(SUM(total_sale), 2) AS total_spent
 FROM source_db.retail_sales
 GROUP BY customer_id
 ORDER BY total_spent DESC
