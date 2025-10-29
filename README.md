@@ -35,10 +35,6 @@
 ATTACH DATABASE '/Users/elianelapointe/sql/projects/retail_sales/retail_sales.db' AS source_db;
 ```
 
-*Could not execute query: database source_db is already in use*
-
-**Explanation:**
-
 **Task**: Preview the first 5 rows of the retail_sales table
 
 ```sql
@@ -53,7 +49,6 @@ SELECT rowid, * FROM source_db.retail_sales LIMIT 5;
 | 4 | 1180 | 2022-01-06 | 08:53:00 | 85 | Male | 41 | Clothing | 3 | 300.0 | 129.0 | 900.0 |
 | 5 | 1522 | 2022-11-14 | 08:35:00 | 48 | Male | 46 | Beauty | 3 | 500.0 | 235.0 | 1500.0 |
 
-**Explanation:**
 
 **Task**: Understand the code by determining the quantity of rows and customers
 
