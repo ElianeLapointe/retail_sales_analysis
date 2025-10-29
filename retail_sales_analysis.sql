@@ -1,4 +1,5 @@
 -- SQLite
+ATTACH DATABASE '/Users/elianelapointe/sql/projects/retail_sales/p1_retail_db.db' AS source_db;
 
 SELECT rowid, *
 FROM retail_sales
