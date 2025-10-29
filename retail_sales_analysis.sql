@@ -70,14 +70,14 @@ GROUP BY gender, category;
 SELECT 
     strftime('%Y', sale_date) AS year,
     strftime('%m', sale_date) AS month,
-    AVG(total_sale) AS average_sale
+    ROUND(AVG(total_sale), 2) AS average_sale
 FROM source_db.retail_sales
 GROUP BY year, month
 ORDER BY average_sale DESC
 LIMIT 1;
 
 -- Write a SQL query to find the top 5 customers based on the highest total sales:
-SELECT customer_id, SUM(total_sale) AS total_spent
+SELECT customer_id, ROUND(SUM(total_sale), 2) AS total_spent
 FROM source_db.retail_sales
 GROUP BY customer_id
 ORDER BY total_spent DESC
